@@ -1,12 +1,13 @@
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
-    DATABASE_URL: str      # DB connection URL
-    SECRET_KEY: str        # JWT secret
-    ALGORITHM: str         # Token algorithm
-    ACCESS_TOKEN_EXPIRE_MINUTES: int  # Token expiry (minutes)
+    DATABASE_URL: str
+    REDIS_URL: str  
+    SECRET_KEY: str
+    ALGORITHM: str
+    ACCESS_TOKEN_EXPIRE_MINUTES: int
 
     class Config:
-        env_file = ".env"  # Load from .env file
+        env_file = ".env"
 
 settings = Settings()
